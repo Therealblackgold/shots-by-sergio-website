@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tsepang Portfolio</title>
+  </head>
+  {% block content %}
+  <body>
+    {% for post in posts %}
+    <img src="{{ post.image.url }}" alt="photo by tshepang Mahlase" />
+    <h1>{{ post.title }}</h1>
+    <h5>{{ post.date|date:'M d Y'| upper }}</h5>
+    <p>{{ post.description|striptags|truncatechars:100 }}</p>
+    {% endfor %}
+  </body>
+</html>
+
+{% endblock %} Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+Quibusdam aperiam odit, labore excepturi incidunt aut, doloremque aliquid nulla
+corrupti rerum non fuga unde officia voluptatibus maxime explicabo fugit amet
+eius.
+
+<!-- size -->
+
+257px × 171px
+
+<!-- standby code -->
+<a href="{{ post.image.url }}" target="_blank"
+  ><span><img src="{{ post.image.url }}" alt="" /></span
+></a>
